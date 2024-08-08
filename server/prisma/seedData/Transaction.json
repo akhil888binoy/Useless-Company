@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "investmentId": 1,
+    "amount": 10000.0,
+    "transactionDate": "2024-08-03T12:00:00.000Z",
+    "status": "Completed",
+    "paymentMethod": "Credit Card"
+  },
+  {
+    "id": 2,
+    "investmentId": 2,
+    "amount": 5000.0,
+    "transactionDate": "2024-08-04T12:00:00.000Z",
+    "status": "Completed",
+    "paymentMethod": "Bank Transfer"
+  }
+]

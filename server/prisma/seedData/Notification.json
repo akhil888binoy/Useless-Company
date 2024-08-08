@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "message": "Your investment in Doe's Bakery has been processed.",
+    "isRead": false,
+    "createdAt": "2024-08-03T12:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "userId": 2,
+    "message": "Your investment in Smith's Books has been processed.",
+    "isRead": false,
+    "createdAt": "2024-08-04T12:00:00.000Z"
+  }
+]

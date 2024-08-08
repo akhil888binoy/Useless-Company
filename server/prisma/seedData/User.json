@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john@example.com",
+    "passwordHash": "hashed_password_123",
+    "fullName": "John Doe",
+    "dateOfBirth": "1990-01-01T00:00:00.000Z",
+    "address": "123 Main St, Anytown, USA",
+    "phoneNumber": "555-1234",
+    "createdAt": "2024-08-01T12:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "email": "jane@example.com",
+    "passwordHash": "hashed_password_456",
+    "fullName": "Jane Smith",
+    "dateOfBirth": "1985-02-15T00:00:00.000Z",
+    "address": "456 Elm St, Othertown, USA",
+    "phoneNumber": "555-5678",
+    "createdAt": "2024-08-02T12:00:00.000Z"
+  }
+]

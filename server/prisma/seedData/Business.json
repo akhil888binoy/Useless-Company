@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Doe's Bakery",
+    "description": "A small bakery specializing in organic breads and pastries.",
+    "industry": "Food & Beverage",
+    "location": "123 Main St, Anytown, USA",
+    "ownerId": 1,
+    "createdAt": "2024-08-01T12:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Smith's Books",
+    "description": "An independent bookstore offering a wide selection of books and gifts.",
+    "industry": "Retail",
+    "location": "456 Elm St, Othertown, USA",
+    "ownerId": 2,
+    "createdAt": "2024-08-02T12:00:00.000Z"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "businessId": 1,
+    "title": "Expand Bakery",
+    "description": "Funding to expand the bakery and add a new cafe section.",
+    "targetAmount": 50000.0,
+    "amountRaised": 20000.0,
+    "startDate": "2024-08-01T12:00:00.000Z",
+    "endDate": "2024-12-31T12:00:00.000Z",
+    "createdAt": "2024-08-01T12:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "businessId": 2,
+    "title": "New Book Inventory",
+    "description": "Funding to purchase new book inventory for the upcoming holiday season.",
+    "targetAmount": 30000.0,
+    "amountRaised": 15000.0,
+    "startDate": "2024-08-02T12:00:00.000Z",
+    "endDate": "2024-11-30T12:00:00.000Z",
+    "createdAt": "2024-08-02T12:00:00.000Z"
+  }
+]

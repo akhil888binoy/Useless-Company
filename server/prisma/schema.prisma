@@ -1,0 +1,117 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int        @id @default(autoincrement())
+  username      String     @unique
+  email         String     @unique
+  passwordHash  String
+  fullName      String?
+  dateOfBirth   DateTime?
+  address       String?
+  phoneNumber   String?
+  createdAt     DateTime   @default(now())
+  businesses    Business[]
+  investments   Investment[]
+  comments      Comment[]
+  notifications Notification[]
+  sessions      Session[]
+  userRoles     UserRole[]
+}
+
+model Business {
+  id             Int                   @id @default(autoincrement())
+  name           String
+  description    String?
+  industry       String?
+  location       String?
+  ownerId        Int
+  createdAt      DateTime              @default(now())
+  owner          User                  @relation(fields: [ownerId], references: [id])
+  opportunities  InvestmentOpportunity[]
+  comments       Comment[]
+}
+
+model InvestmentOpportunity {
+  id            Int          @id @default(autoincrement())
+  businessId    Int
+  title         String
+  description   String?
+  targetAmount  Float
+  amountRaised  Float         @default(0)
+  startDate     DateTime
+  endDate       DateTime
+  createdAt     DateTime      @default(now())
+  business      Business      @relation(fields: [businessId], references: [id])
+  investments   Investment[]
+}
+
+model Investment {
+  id              Int                   @id @default(autoincrement())
+  opportunityId   Int
+  userId          Int
+  amount          Float
+  investmentDate  DateTime              @default(now())
+  opportunity     InvestmentOpportunity @relation(fields: [opportunityId], references: [id])
+  user            User                  @relation(fields: [userId], references: [id])
+  transactions    Transaction[]
+}
+
+model Transaction {
+  id               Int         @id @default(autoincrement())
+  investmentId     Int
+  amount           Float
+  transactionDate  DateTime    @default(now())
+  status           String
+  paymentMethod    String?
+  investment       Investment  @relation(fields: [investmentId], references: [id])
+}
+
+model Comment {
+  id           Int       @id @default(autoincrement())
+  businessId   Int
+  userId       Int
+  rating       Int
+  comment      String?
+  createdAt    DateTime  @default(now())
+  business     Business  @relation(fields: [businessId], references: [id])
+  user         User      @relation(fields: [userId], references: [id])
+}
+
+model Notification {
+  id        Int       @id @default(autoincrement())
+  userId    Int
+  message   String
+  isRead    Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  user      User      @relation(fields: [userId], references: [id])
+}
+
+model Role {
+  id        Int         @id @default(autoincrement())
+  roleName  String      @unique
+  userRoles UserRole[]
+}
+
+model UserRole {
+  userId  Int
+  roleId  Int
+  user    User @relation(fields: [userId], references: [id])
+  role    Role @relation(fields: [roleId], references: [id])
+  @@id([userId, roleId])
+}
+
+model Session {
+  id           Int       @id @default(autoincrement())
+  userId       Int
+  sessionToken String    @unique
+  createdAt    DateTime  @default(now())
+  expiresAt    DateTime
+  user         User      @relation(fields: [userId], references: [id])
+}
